@@ -218,3 +218,29 @@ $$E(C) = \sum_{\text{颜色 } i} c_i \log c_i$$
 论文也指出了局限性：定理 1.2 的普适最优性是针对运行时间（即所有操作的总代价）而言的。如果只关注比较次数，Dijkstra + 工作集堆并不总是最优的——例如在链状图上，距离排序的比较复杂度实际上是 0（不需要任何比较就能确定顺序），但 Dijkstra 仍然会做 $O(n)$ 次比较。论文第 5 节给出了一个更复杂的算法变体，通过先收缩图再展开的方式，同时在运行时间和比较次数两个度量上达到普适最优。
 
 从更宏观的角度看，本文开创了将普适最优性从分布式计算引入顺序计算的先河。这一框架的适用性可能远超最短路径问题——任何"图结构固定、权重变化"的优化问题都可能受益于类似的分析。后续工作 [Hae+24] 已经展示了这一点：拓扑堆排序直接复用了本文的证明框架，解决了部分信息下的排序问题。这暗示普适最优性可能成为算法分析中一个有用的新范式。
+
+## 参考文献
+
+- [ABC17] Afshani, Barbay, Chan. "Instance-optimal geometric algorithms." *JACM*, 2017.
+- [Dij59] Dijkstra. "A note on two problems in connexion with graphs." *Numerische Mathematik*, 1959.
+- [Dua+23] Duan, Mao, Shu, Yin. "Breaking the $O(m + n \log n)$ barrier for undirected single-source shortest paths." *STOC*, 2023.
+- [EFI12] Elmasry, Farzan, Iacono. "Pairing heaps with amortized meld time." *SICOMP*, 2012.
+- [Elm06] Elmasry. "Pairing heaps with $O(\log \log n)$ decrease cost." *SODA*, 2006.
+- [FLN01] Fagin, Lotem, Naor. "Optimal time aggregation." *PODC*, 2001.
+- [Fre+86] Fredman, Sedgewick, Sleator, Tarjan. "The pairing heap: a new form of self-adjusting heap." *Algorithmica*, 1986.
+- [Fre76] Fredman. "Information theoretic implications of a sorting problem." *JACM*, 1976.
+- [FT87] Fredman, Tarjan. "Fibonacci heaps and their uses in improved network optimization algorithms." *JACM*, 1987.
+- [FW93] Fredman, Willard. "Surpassing the information theoretic bound with fusion trees." *JCSS*, 1993.
+- [GKP98] Garay, Kutten, Peleg. "A sublinear time distributed algorithm for minimum-weight spanning trees." *SIAM J. Comput.*, 1998.
+- [GZ22] Ghaffari, Zuzic. "Universally-optimal distributed algorithms." *FOCS*, 2022.
+- [Hae+24] Haeupler, Hladík, Iacono, Rozhoň, Tarjan, Tetek. "Topological heapsort." *ICALP*, 2024.
+- [HRG22] Haeupler, Rozhoň, Ghaffari. "Near-optimal distributed algorithms." *SODA*, 2022.
+- [HWZ21] Haeupler, Wajc, Zuzic. "Universally-optimal distributed algorithms for weighted problems." *JACM*, 2021.
+- [Iac00] Iacono. "Alternatives to splay trees with $O(\log n)$ worst-case access times." *SODA*, 2000.
+- [Mun+19] Munro, Peng, Wild, Zhang. "Tournament heaps and the dynamic optimality conjecture." *SODA*, 2019.
+- [Rou21] Roughgarden. *Beyond the Worst-Case Analysis of Algorithms*. Cambridge University Press, 2021.
+- [Roz+22] Rozhoň et al. "Universally-optimal distributed algorithms." *FOCS*, 2022.
+- [ST85] Sleator, Tarjan. "Self-adjusting binary search trees." *JACM*, 1985.
+- [Tho99] Thorup. "Undirected single-source shortest paths with positive integer weights in linear time." *JACM*, 1999.
+- [Tho04] Thorup. "Integer priority queues with decrease key in constant time and the single source shortest paths problem." *JCSS*, 2004.
+- [Zuz+22] Zuzic et al. "Near-optimal distributed algorithms for approximate shortest paths." *FOCS*, 2022.
